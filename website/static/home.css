@@ -76,6 +76,13 @@ body::-webkit-scrollbar-thumb {
 .welcome-text span{
    color: var(--orange);
 }
+
+
+.description {
+    color: white;
+    font-size: 23px;
+ }
+
 .home {
    background-size: cover;
    margin-bottom: 70px;
