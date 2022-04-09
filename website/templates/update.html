@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='snippet_editor.css') }}">
+<title>Snippets Editor</title>
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="app">
+   <form action="" method="POST">
+      <div class="wrapper">
+         <input class="paste-title child" type="text" name="title" placeholder="Paste Title...">
+         <textarea placeholder="Your paste here..." type="text" name="paste_content" required>{{ snippet.content }}</textarea><br>
+
+         <!-- <p class="optional-settings child">Optional Settings</p> -->
+         <div class="bar child"></div>
+
+         <div class="options child">
+            <div class="syntax-highlighting">
+               <p>Syntax Highlighting: </p>
+               <div class="dropdown">
+                  <!-- <button onclick="toggleDropdown()" class="dropbtn" name="language">Select Language</button> -->
+                  <!-- <div id="myDropdown" class="dropdown-content"> -->
+                  <select class="language-select" name="lang" id="languages">
+                     <option value="c">C</option>
+                     <option value="cpp">C++</option>
+                     <option value="csharp">C#</option>
+                     <option value="python">Python</option>
+                     <option value="java">Java</option>
+                     <option value="javascript">JavaScript</option>
+                     <option value="html">HTML</option>
+                     <option value="css">CSS</option>
+                     <option value="go">GO</option>
+                     <option value="rust">Rust</option>
+                     <option value="r">R</option>
+                     <option value="ruby">Ruby</option>
+                     <option value="php">PHP</option>
+                  </select>
+                  <!-- </div> -->
+               </div>
+            </div>
+
+            <!-- <div class="burn">
+               <label class="container">Burn after read
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+               </label>
+            </div> -->
+
+         </div>
+
+         <input class="save-btn child" type="submit" name="save" value="Save">
+      </div>
+   </form>
+</div>
+
+
+<script src="snippets-editor.js"></script>
+
+{% endblock %}

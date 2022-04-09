@@ -1,0 +1,41 @@
+<!-- Page to edit the code snippets -->
+{% extends "base.html" %}
+
+
+{% block head %} 
+<title>Profile Editor</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='snippets.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div id="left-div">
+    <div class="container">
+        
+         <div class="app">
+
+            {% for snippet in user.snippet %}
+            <div class="snippet">
+                <p class="snippet-title">{{ snippet.title }}</p>
+                <a href="{{ snippet.url_id }}">{{ snippet.url_id }}</a> 
+                <!-- check if this works -->
+                <div class="buttons">
+                    <a href="/delete/{{ snippet.id }} ">
+                        <button class="del-btn">Delete</button>
+                    </a>
+                    <a href="/edit/{{ snippet.id }}" >
+                        <button class="edit-btn">Edit</button>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+
+
+
+               <div class="form">
+                  <form method="POST">
+                     <input class="add-snippet-button" type="submit" name="add_snippet" value="Add Code Snippet">
+                  </form>
+               </div>
+         </div>
+{% endblock %}

@@ -1,0 +1,57 @@
+html { 
+	/* background: url(https://i.imgur.com/DDuSaVu.gif) no-repeat center center fixed;  */
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  }
+
+body {
+    background-color: rgb(65, 54, 60);
+    /* font-family: 'Open Sans', sans-serif; */
+	font-family: 'DejaVu Sans Mono', monospace;;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+
+a {
+	text-decoration: none;
+	color: white;
+	transition: color 1s;
+}
+.profile-picture {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10%;
+	height: auto;
+	max-width: 100px;
+	border-radius: 50%;
+}
+
+.profile-name {
+	text-align: center;
+	padding: 30px;
+	max-width: 100px;
+	margin: auto;
+	border: 5px solid rgb(45, 46, 58);;
+	border-radius: 6px;
+	text-align: center;
+	
+}
+
+
+.snippets {
+	text-align: center;
+	font-weight: bold;
+	margin-top: 20px;
+	padding: 20px;
+	border: 1px solid white;
+	border-width: 2px;
+	width: 290px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 40px;
+}

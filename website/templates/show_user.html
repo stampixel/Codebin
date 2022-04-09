@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='show_user.css') }}">
+        <link rel="icon" href="https://img.icons8.com/officel/40/000000/copyright.png">
+    </head>
+
+    {% for info in user.profile %}
+    <body background="">
+        <!-- <img src="{{ info.pfp }}" alt="pfp" class="profile-picture"> -->
+        <div class="profile-name">
+            <a href="">{{ user.username }}</a>
+            <!-- <p>{{ info.about_me }}</p> -->
+        </div>
+        {% if user.snippet %}
+        {% for snippet in user.snippet %}
+        <a href="https://codebin.ga/{{ snippet.url_id }}" class="snippets">{{ snippet.title }}</a>
+        {% endfor %}
+        {% else %}
+        <a href="https://codebin.ga" class="snippets">This user currently doesn't have any snippets!</a>
+        {% endif %}
+    </body>
+    {% endfor %}
+</html>

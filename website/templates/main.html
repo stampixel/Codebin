@@ -1,0 +1,64 @@
+<!-- Main page/directory of our website -->
+
+<!-- Dont work on this first -->
+{% extends "base.html" %}
+
+
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+<title>Home</title>
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+    
+
+<div class="app">
+    <div class="app-wrapper">
+       <!-- TITLE -->
+       <section class="home flex-center">
+          <div class="resize-padding">
+             <p class="welcome-text">
+                &lt;code<span>bin</span>/&gt;
+             </p>
+          </div>   
+       </section>
+
+       <!-- FEATURES -->
+       <div class="flex-center">
+          <div class="features-wrapper">
+             <div class="features-container">
+                <div>
+                   <img src="{{ url_for('static', filename='snippets.png') }}" alt="Snippets Page">
+                   <figcaption>
+                      <h3>Snippet Storage</h3><br>
+                      <h5>All your snippets in one place. Edit or delete them as you wish.</h5>
+                   </figcaption>
+                </div>
+                <div>
+                   <img src="{{ url_for('static', filename='snippet-editor.png') }}" alt="Snippet Editor Page">
+                   <figcaption>
+                      <h3>Snipppet Editing</h3><br>
+                      <h5>A simple and straight to the point interface for editing your snippets.</h5>
+                   </figcaption>
+                </div>
+                <div>
+                   <img src="{{ url_for('static', filename='syntax-highlighting.png') }}" alt="Syntax Highlighting Image">
+                   <figcaption>
+                      <h3>Syntax Highlighting</h3><br>
+                      <h5>Enjoy easy to read highlighted syntax that supports up to 10 of the most popular programming languages including Python, C++, and JavaScript.</h5>
+                   </figcaption>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+
+
+{% endblock %}

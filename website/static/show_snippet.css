@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+
+body {
+    background: #2a2734;
+}
+
+h3 {
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 21px;
+    tab-size: 4;
+    -moz-tab-size: 4;
+    text-decoration: underline;
+    margin-left: 2em;
+    color: rgb(82, 200, 246);
+}
+
