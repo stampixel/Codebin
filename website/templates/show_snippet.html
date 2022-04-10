@@ -1,12 +1,14 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
+<!DOCTYPE html>
+<html>
+
+<head>
    <link rel="stylesheet" href="{{ url_for('static', filename='prism.css') }}">
    <link rel="stylesheet" href="{{ url_for('static', filename='show_snippet.css') }}">
    <title>{{ snippet.url_id }}</title>
    <link rel="icon" href="https://img.icons8.com/officel/40/000000/copyright.png">
-</head> 
-<body> 
+</head>
+
+<body>
 
    <script src="{{ url_for('static', filename='prism.js') }}"></script>
    <h3> {{ snippet.title }} </h3>
@@ -45,5 +47,6 @@
 {{ snippet.content }}
       </code>
    </pre>
-</body> 
+</body>
+
 </html>
