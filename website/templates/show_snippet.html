@@ -2,51 +2,51 @@
 <html>
 
 <head>
-   <link rel="stylesheet" href="{{ url_for('static', filename='prism.css') }}">
-   <link rel="stylesheet" href="{{ url_for('static', filename='show_snippet.css') }}">
-   <title>{{ snippet.url_id }}</title>
-   <link rel="icon" href="https://img.icons8.com/officel/40/000000/copyright.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='prism.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='show_snippet.css') }}">
+    <title>{{ snippet.url_id }}</title>
+    <link rel="icon" href="https://img.icons8.com/officel/40/000000/copyright.png">
 </head>
 
 <body>
 
-   <script src="{{ url_for('static', filename='prism.js') }}"></script>
-   <h3> {{ snippet.title }} </h3>
+    <script src="{{ url_for('static', filename='prism.js') }}"></script>
+    <h3> {{ snippet.title }} </h3>
 
 
-   <pre>
-         {% if snippet.lang == "c" %}
-         <code class="language-c">
-         {% elif snippet.lang == "" %}
-         <code class="language-cpp">
-         {% elif snippet.lang == "csharp" %}
-         <code class="language-csharp">
-         {% elif snippet.lang == "python" %}
-         <code class="language-python">
-         {% elif snippet.lang == "java" %}
-         <code class="language-java">
-         {% elif snippet.lang == "javascript" %}
-         <code class="language-javascript">
-         {% elif snippet.lang == "html" %}
-         <code class="language-html">
-         {% elif snippet.lang == "css" %}
-         <code class="language-css">
-         {% elif snippet.lang == "go" %}
-         <code class="language-go">
-         {% elif snippet.lang == "rust" %}
-         <code class="language-rust">
-         {% elif snippet.lang == "r" %}
-         <code class="language-r">
-         {% elif snippet.lang == "ruby" %}
-         <code class="language-ruby">
-         {% elif snippet.lang == "php" %}
-         <code class="language-php">
-         {% else %}
-         <code class="language-python">
-         {% endif %}
+    <pre>
+        {% if snippet.lang == "c" %}
+        <code class="language-c">
+        {% elif snippet.lang == "" %}
+        <code class="language-cpp">
+        {% elif snippet.lang == "csharp" %}
+        <code class="language-csharp">
+        {% elif snippet.lang == "python" %}
+        <code class="language-python">
+        {% elif snippet.lang == "java" %}
+        <code class="language-java">
+        {% elif snippet.lang == "javascript" %}
+        <code class="language-javascript">
+        {% elif snippet.lang == "html" %}
+        <code class="language-html">
+        {% elif snippet.lang == "css" %}
+        <code class="language-css">
+        {% elif snippet.lang == "go" %}
+        <code class="language-go">
+        {% elif snippet.lang == "rust" %}
+        <code class="language-rust">
+        {% elif snippet.lang == "r" %}
+        <code class="language-r">
+        {% elif snippet.lang == "ruby" %}
+        <code class="language-ruby">
+        {% elif snippet.lang == "php" %}
+        <code class="language-php">
+        {% else %}
+        <code class="language-python">
+        {% endif %}
 {{ snippet.content }}
-      </code>
-   </pre>
+       </code>
+    </pre>
 </body>
 
 </html>
