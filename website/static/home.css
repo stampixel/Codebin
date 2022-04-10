@@ -129,7 +129,7 @@ body::-webkit-scrollbar-thumb {
    opacity: 0;
    transition: all 0.5s ease;
 }
-.features-container figcaption h3 {
+.features-container figcaption h4 {
    display: inline-block;
    padding: 10px;
    margin-bottom: 8px;
