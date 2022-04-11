@@ -15,8 +15,7 @@
     <form action="" method="POST">
         <div class="wrapper">
             <input class="paste-title child" type="text" name="title" placeholder="Paste Title...">
-            <textarea placeholder="Your paste here..." type="text" name="paste_content"
-                required>{{ snippet.content }}</textarea><br>
+            <textarea id="snippet" placeholder="Your paste here..." type="text" name="paste_content" required>{{ snippet.content }}</textarea><br>
 
             <!-- <p class="optional-settings child">Optional Settings</p> -->
             <div class="bar child"></div>
@@ -61,6 +60,21 @@
 </div>
 
 
-<script src="snippets-editor.js"></script>
+<script>
+    const textarea = document.querySelector('textarea')
+
+    textarea.addEventListener('keydown', (e) => {
+        if (e.keyCode === 9) {
+            e.preventDefault()
+
+            textarea.setRangeText(
+                '    ',
+                textarea.selectionStart,
+                textarea.selectionStart,
+                'end'
+            )
+        }
+    })
+</script>
 
 {% endblock %}
