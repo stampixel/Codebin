@@ -85,7 +85,6 @@ def show_user(username):
     user = User.query.filter_by(username=username).first_or_404()
     return render_template('show_user.html', user=user)
 
-
 @views.route('/<url_id>')
 def show_snippet(url_id):
     snippet = Snippet.query.filter_by(url_id=url_id).first_or_404()

@@ -17,16 +17,13 @@ def login():
             if check_password_hash(user.password, password):
                 flash('Logged in successfully!', category='success')
                 login_user(user = User.query.filter_by(username=username).first(), remember=True)
-                
-                
-                return redirect(url_for('views.snippets'))
-           
+
+                return redirect(url_for('views.snippets'))       
             else:
                 flash('Incorrect password, try again. (contact stampixel to reset it).', category='error')
         else:
             flash("Username does not exist, try registering an account!", category='error')
     return render_template("login.html", user=current_user)
-
 
 @auth.route('/logout') # Done
 @login_required
@@ -65,26 +62,6 @@ def register():
 
             flash("Successfully created account!", category='success') # auto logins btw
             
-            
             return redirect(url_for('views.snippets'))
 
     return render_template("register.html", user=current_user)
-
-
-@auth.route('/delete/<int:id>') # delete snipet
-@login_required
-def delete_link(id):
-    link_to_delete = Link.query.get_or_404(id)
-    try:
-        db.session.delete(link_to_delete)
-        db.session.commit()
-        return redirect(url_for('views.snippets'))
-    except:
-        flash('Try again later.', category='error')
-
-
-
-@auth.route('/edit/<int:id>') # edit snippet
-@login_required
-def edit_link(id):
-    pass
