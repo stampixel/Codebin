@@ -30,5 +30,3 @@ class User(db.Model, UserMixin): # user information, username, password, etc
   
     snippet = db.relationship('Snippet')
     profile = db.relationship('Profile')
-
-
