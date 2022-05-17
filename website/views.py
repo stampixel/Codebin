@@ -17,14 +17,13 @@ def index():
 
 
 @views.route('/snippets', methods=['GET', 'POST']) # DONE
+@login_required
 def snippets():
     if request.method == 'POST':
         try:
             if request.form['add_snippet'] == "Add Code Snippet":
-                print("works")
                 return redirect(url_for('views.edit_snippet'))
         except:
-            print("hell world")
             pass
     return render_template("snippets.html", user=current_user)
 
