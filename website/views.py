@@ -28,6 +28,7 @@ def snippets():
     return render_template("snippets.html", user=current_user)
 
 @views.route('editor', methods=['GET', 'POST'])
+@login_required
 def edit_snippet():
     if request.method == 'POST':
         # try:
@@ -43,7 +44,7 @@ def edit_snippet():
             else:
                 if title == "":
                     title = "New Paste"
-                url_id = ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(16))
+                url_id = ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(5))
                 snippet = Snippet(url_id=url_id, title=title, content=paste_content, lang=lang, user_id = current_user.id)
                 db.session.add(snippet)
                 db.session.commit()
