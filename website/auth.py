@@ -13,14 +13,14 @@ def login():
         password = request.form['password']
     
         user = User.query.filter_by(username=username).first()
-        if user: # if user exists
+        if user:
             if check_password_hash(user.password, password):
                 flash('Logged in successfully!', category='success')
                 login_user(user = User.query.filter_by(username=username).first(), remember=True)
 
                 return redirect(url_for('views.snippets'))       
             else:
-                flash('Incorrect password, try again. (contact stampixel to reset it).', category='error')
+                flash('Incorrect password, try again.', category='error')
         else:
             flash("Username does not exist, try registering an account!", category='error')
     return render_template("login.html", user=current_user)
@@ -42,7 +42,7 @@ def register():
         if user:
             flash("Username already exists!", category='error')
         elif password1 != password2:
-            flash("Paswords must match!", category='error')
+            flash("Passwords must match!", category='error')
         elif len(username) > 24:
             flash("Username is over 24 chars!", category='error')
         elif len(username) < 2:

@@ -71,6 +71,7 @@ def update_snippet(id):
     snippet_to_update = Snippet.query.get_or_404(id)
     if request.method == 'POST':
         snippet_to_update.content = request.form['paste_content']
+        snippet_to_update.title = request.form['title']
         try:
             db.session.commit()
             return redirect('/')
