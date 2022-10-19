@@ -13,7 +13,7 @@ def index():
     if current_user.is_authenticated:
         return redirect(url_for('views.snippets'))
     else:
-        return render_template('main.html', user=current_user)
+        return render_template('home.html', user=current_user)
 
 
 @views.route('/snippets', methods=['GET', 'POST']) # DONE
